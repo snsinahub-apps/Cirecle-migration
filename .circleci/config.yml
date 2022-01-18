@@ -5,7 +5,6 @@ jobs:
       - image: alpine:3.7
     steps:
       - run:
-        name: start simple
         command: |
           echo 'simply'
           echo 'created!'
