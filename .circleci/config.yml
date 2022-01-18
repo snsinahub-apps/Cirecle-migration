@@ -10,5 +10,10 @@ jobs:
           command: |
             echo 'simply'
             echo 'created!'
+workflows:
+  start-step-1:
+    jobs:
+      - step-1
+
 
     
