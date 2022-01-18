@@ -10,6 +10,10 @@ jobs:
           command: |
             echo 'simply'
             echo 'created!'
+      - run:
+          name: "build docker image"
+          command: |
+            docker build -t snsinahub/circleci-migration:1.0.0 .
 workflows:
   start-step-1:
     jobs:
