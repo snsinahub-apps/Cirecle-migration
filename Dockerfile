@@ -5,7 +5,8 @@ RUN cd /js
 RUN apk add --update nodejs npm
 
 COPY index.js .
-COPY package*.json .
+COPY package.json .
+COPY package-lock.json .
 
 RUN npm install
 RUN ls /js
