@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   step-1:
     docker:
-      - image: alpine:3.15
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
