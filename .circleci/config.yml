@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  step-1:
     docker:
       - image: alpine:3.7
     steps:
@@ -10,4 +10,5 @@ jobs:
         command: |
           echo 'simply'
           echo 'created!'
+
     
