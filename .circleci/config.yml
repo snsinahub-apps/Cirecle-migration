@@ -4,7 +4,9 @@ jobs:
     docker:
       - image: alpine:3.7
     steps:
+      - checkout
       - run:
+        name: "This is the first step"
         command: |
           echo 'simply'
           echo 'created!'
