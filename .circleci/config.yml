@@ -26,17 +26,11 @@ jobs:
   step-2:
     executor: 
       name: docker/docker
-      tag: '3.6'
-    environment:
-      DOCKER_LOGIN: ''
     steps:
       - checkout      
       - setup_remote_docker
       - docker/build:
-          image: snsinahub-valet/aws-migration
-      - run:
-          command: |
-            echo "Digest is: $(</tmp/digest.txt)"
+          image: snsinahub-valet/aws-migration      
 workflows:
   start-step-1:
     jobs:
