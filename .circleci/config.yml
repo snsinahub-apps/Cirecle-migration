@@ -29,6 +29,7 @@ jobs:
       tag: '3.6'
     environment:
       DOCKER_BUILDKIT: 1
+      DOCKER_LOGIN: ''
     steps:
       - checkout
       - setup_remote_docker
