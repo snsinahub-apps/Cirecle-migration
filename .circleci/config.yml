@@ -26,7 +26,6 @@ jobs:
       - image: docker:17.05.0-ce-git
     steps:
       - checkout
-      - docker/check
       - docker/build:
           image: snsinahub-valet/aws-migration:latest      
 workflows:
