@@ -27,6 +27,8 @@ jobs:
     executor: 
       name: docker/docker
       tag: '3.6'
+     environment:
+      DOCKER_BUILDKIT: 1
     steps:
       - checkout
       - setup_remote_docker
