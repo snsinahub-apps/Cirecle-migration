@@ -22,6 +22,7 @@ jobs:
           command: |
             docker build -t snsinahub-valet/circleci-migration:1.0.0 .            
   step-2:
+    executor: docker/docker
     steps:
       - checkout
       - docker/check
