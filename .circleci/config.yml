@@ -32,12 +32,7 @@ jobs:
       - docker/build:
           image: snsinahub-valet/aws-migration      
 workflows:
-  start-step-1:
+  running-steps:
     jobs:
       - step-1
-  start-step-2:
-    jobs:
-      - step-2
-
-
-    
+      - step-2    
