@@ -1,6 +1,8 @@
 version: 2.1
 orbs: 
   docker: circleci/docker@2.0.2
+environment:
+  DOCKER_LOGIN: ""
 jobs:
   step-1:
     docker:
