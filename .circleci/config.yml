@@ -22,9 +22,12 @@ jobs:
           command: |
             docker build -t snsinahub-valet/circleci-migration:1.0.0 .            
   step-2:
-    executor: docker/docker
+    executor: 
+      name: docker/docker
+      tag: '3.6'
     steps:
       - checkout
+      - docker/install-docker-tools
       - docker/check
       - docker/build:
           image: snsinahub-valet/aws-migration:latest      
