@@ -31,10 +31,7 @@ jobs:
       DOCKER_BUILDKIT: 1
       DOCKER_LOGIN: ''
     steps:
-      - checkout
-      - setup_remote_docker
-      - docker/install-docker-tools
-      - docker/check
+      - checkout      
       - docker/build:
           image: snsinahub-valet/aws-migration
       - run:
