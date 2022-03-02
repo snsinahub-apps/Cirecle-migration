@@ -24,6 +24,72 @@ jobs:
           command: |
             docker build -t snsinahub-valet/circleci-migration:1.0.0 .            
   step-2:
+    parameters:
+      attach-at:
+          default: ""
+          description: |
+              Provide a path if you wish to attach a workspace. Use `./` for the working directory. `attach_workspace` attached location - where to mount folder/files that were `persist_to_workspace` in a previous step. https://circleci.com/docs/2.0/configuration-reference/#attach_workspace
+          type: string
+      cache_from:
+          default: ""
+          description: |
+              Comma-separated list of images, images will first be pulled, then passed as the --cache-from build argument https://docs.docker.com/engine/reference/commandline/build/
+          type: string
+      debug:
+          default: false
+          description: |
+              Extra output for orb developers
+          type: boolean
+      docker-context:
+          default: .
+          description: |
+              Path to the directory containing your build context, defaults to . (working directory)
+          type: string
+      dockerfile:
+          default: Dockerfile
+          description: Name of dockerfile to use, defaults to Dockerfile
+          type: string
+      extra_build_args:
+          default: ""
+          description: |
+              Extra flags to pass to docker build. For examples, see https://docs.docker.com/engine/reference/commandline/build
+          type: string
+      image:
+          description: Name of image to build
+          type: string
+      lint-dockerfile:
+          default: false
+          description: |
+              Lint Dockerfile before building?
+          type: boolean
+      no_output_timeout:
+          default: 10m
+          description: |
+              Pass through a default timeout if your Docker build does not output anything for more than 10 minutes.
+          type: string
+      path:
+          default: .
+          description: |
+              Path to the directory containing your Dockerfile, defaults to . (working directory)
+          type: string
+      registry:
+          default: docker.io
+          description: |
+              Name of registry to use, defaults to docker.io
+          type: string
+      step-name:
+          default: Docker build
+          description: Specify a custom step name for this command, if desired
+          type: string
+      tag:
+          default: $CIRCLE_SHA1
+          description: Image tag, defaults to the value of $CIRCLE_SHA1
+          type: string
+      treat-warnings-as-errors:
+          default: false
+          description: |
+              If linting Dockerfile, treat linting warnings as errors? (would trigger an exit code and fail the CircleCI job)
+          type: boolean
     executor: 
       name: docker/docker
       tag: '3.6'
